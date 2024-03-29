@@ -25,6 +25,7 @@ pub struct InstantiateMsg {
     pub insurance_fund: String,
     pub fee_pool: String,
     pub eligible_collateral: String,
+    // `initial_margin_ratio` >= `maintenance_margin_ratio`
     pub initial_margin_ratio: Uint128,
     pub maintenance_margin_ratio: Uint128,
     pub liquidation_fee: Uint128,
