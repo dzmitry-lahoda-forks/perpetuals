@@ -11,7 +11,8 @@ class Position:
     notional : int
     last_updated_premium_fraction: int
     updated_at : int
-    
+    unrealized_pnl : int
+    open_position_notional : int
     def __post_init__(self):
         assert(self.size != 0)
         assert(self.margin > 0)
@@ -34,6 +35,7 @@ class Market:
     unrealized_pnl : int
     insurance_fund: int
     fee_pool: int
+    funding_period: int
     positions : [Position]
     def __post_init__(self):
         assert(self.initial_margin_ratio >= self.maintenance_ratio)

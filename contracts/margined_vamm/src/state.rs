@@ -11,6 +11,8 @@ pub static KEY_STATE: &[u8] = b"state";
 pub static KEY_RESERVE_SNAPSHOT: &[u8] = b"reserve_snapshot";
 pub static KEY_RESERVE_SNAPSHOT_COUNTER: &[u8] = b"reserve_snapshot_counter";
 
+type Seconds = u64;
+
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq, JsonSchema)]
 pub struct Config {
     pub margin_engine: Addr,
@@ -24,8 +26,8 @@ pub struct Config {
     pub toll_ratio: Uint128,
     pub spread_ratio: Uint128,
     pub fluctuation_limit_ratio: Uint128,
-    pub spot_price_twap_interval: u64,
-    pub funding_period: u64,
+    pub spot_price_twap_interval: Seconds,
+    pub funding_period: Seconds,
     pub funding_buffer_period: u64,
 }
 
