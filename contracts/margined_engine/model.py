@@ -36,7 +36,9 @@ class Market:
     insurance_fund: int
     fee_pool: int
     funding_period: int
+    fluctuation_limit_ratio: int
     positions : [Position]
+    
     def __post_init__(self):
         assert(self.initial_margin_ratio >= self.maintenance_ratio)
         assert(self.initial_margin_ratio > 0)
@@ -44,7 +46,9 @@ class Market:
         assert(self.funding_period > 0)
 
 if __name__ == "__main__":
-    # open position
+    market = Market(0.1, 0.05, 0.01, 3600, 1000000, 0.1, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, [])
+    
+    market.open_position()
     # deposit margin
     # withdraw margin
     # pay funding

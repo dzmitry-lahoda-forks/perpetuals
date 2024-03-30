@@ -46,7 +46,7 @@ pub struct State {
     pub base_asset_reserve: Uint128,
     pub total_position_size: Integer,
     pub funding_rate: Integer,
-    pub next_funding_time: u64,
+    pub next_funding_time: Seconds,
 }
 
 pub fn store_state(storage: &mut dyn Storage, state: &State) -> StdResult<()> {
